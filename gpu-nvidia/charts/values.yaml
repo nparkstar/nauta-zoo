@@ -1,0 +1,31 @@
+# Default values for charts.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# Resource settings
+resources:
+  requests:
+    cpu: 8
+    memory: 32000000000
+  limits:
+    cpu: 8
+    memory: 32000000000
+
+# Shorthands for setting both limits and requests of cpu/memory
+cpu: null
+memory: null
+
+# Settings for CLI automatic resource configuration
+cpu_fraction: 0.5
+memory_fraction: 0.5
+
+# Settings below  are not intended to be changed
+JupyterPort: 8888
+image:
+  pullPolicy: IfNotPresent
+  clusterRepository: {{ NAUTA.ExperimentImage }}
+
+service:
+  type: ClusterIP
+experimentName:  {{ NAUTA.ExperimentName }} 
+podCount: 1

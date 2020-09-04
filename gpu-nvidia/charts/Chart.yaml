@@ -1,0 +1,4 @@
+name: jupyter
+apiVersion: v1
+description: An interactive session based on Jupyter Notebook using Python 3 and using Tensorflow on NVIDIA GPU.
+version: 0.1.0
