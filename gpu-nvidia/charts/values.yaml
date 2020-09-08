@@ -7,9 +7,11 @@ resources:
   requests:
     cpu: 8
     memory: 32000000000
+    nvidia.com/gpu: "1"
   limits:
     cpu: 8
     memory: 32000000000
+    nvidia.com/gpu: "1"
 
 # Shorthands for setting both limits and requests of cpu/memory
 cpu: null
