@@ -5,15 +5,20 @@
 # Resource settings
 resources:
   requests:
-    cpu: 8
-    memory: 32000000000
+    cpu: 2
+    memory: 12000000000
     nvidia.com/gpu: "1"
   limits:
-    cpu: 8
-    memory: 32000000000
+    cpu: 2
+    memory: 12000000000
     nvidia.com/gpu: "1"
 
+# nodeSelector
+nodeSelector:
+  gpu: "True"
+
 # Shorthands for setting both limits and requests of cpu/memory
+gpu: null
 cpu: null
 memory: null
 
