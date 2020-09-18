@@ -2,37 +2,46 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-# Resource settings
+# Resource settings for training pod
 resources:
   requests:
     cpu: 2
     memory: 8000000000
-    gpu: 1
   limits:
     cpu: 2
     memory: 8000000000
-    gpu: 1
-
-# nodeSelector
-nodeSelector:
-  gpu: "True"
 
 # Shorthands for setting both limits and requests of cpu/memory
-gpu: 1
 cpu: null
 memory: null
+
+env:
+  - name: KMP_BLOCKTIME
+    value: "0"  # 0 is a good default for most CNN models, could be adjusted for additional performance
+  - name: KMP_AFFINITY
+    value: "granularity=fine,verbose,compact,1,0"  # these are recommended affinity settings
+
 
 # Settings for CLI automatic resource configuration
 cpu_fraction: 0.5
 memory_fraction: 0.5
 
 # Settings below  are not intended to be changed
-JupyterPort: 8888
+experimentName: {{ NAUTA.ExperimentName }} 
+podCount: 1
+
+TensorBoardPort: 8888
+TensorIPythonPort: 6006
+
+commandline:
+  args:
+    {% for arg in NAUTA.CommandLine %}
+    - {{ arg }}
+    {% endfor %}
+
 image:
   pullPolicy: IfNotPresent
   clusterRepository: {{ NAUTA.ExperimentImage }}
 
 service:
   type: ClusterIP
-experimentName:  {{ NAUTA.ExperimentName }} 
-podCount: 1
