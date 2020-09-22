@@ -1,4 +1,4 @@
-name: deepcell
+name: jupyter-deepcell
 apiVersion: v1
 description: An interactive session based on Jupyter Notebook using Python 3 and Anaconda 3.
 version: 0.1.0

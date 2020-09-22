@@ -69,9 +69,11 @@ spec:
                 requests:
                   cpu: {{ default .Values.resources.requests.cpu .Values.cpu}}
                   memory: {{ default .Values.resources.requests.memory .Values.memory }}
+                  nvidia.com/gpu: {{ default .Values.resources.requests.gpu .Values.gpu}}
                 limits:
                   cpu: {{ default .Values.resources.limits.cpu .Values.cpu }}
                   memory: {{ default .Values.resources.limits.memory .Values.memory }}
+                  nvidia.com/gpu: {{ default .Values.resources.limits.gpu .Values.gpu }}
           schedulerName: kube-batch
           volumes:
             - name: input-home

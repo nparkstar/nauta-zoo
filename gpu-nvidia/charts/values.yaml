@@ -18,9 +18,9 @@ nodeSelector:
   gpu: "True"
 
 # Shorthands for setting both limits and requests of cpu/memory
-gpu: 1
 cpu: null
 memory: null
+gpu: 1
 
 # Settings for CLI automatic resource configuration
 cpu_fraction: 0.5

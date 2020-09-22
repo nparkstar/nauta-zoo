@@ -1,4 +1,0 @@
-name: gpu-nvidia-tf-training-single
-apiVersion: v1
-description: A TensorFlow single-node training job based on TfJob using Python 3 with gpu-nvidia.
-version: 0.1.0
