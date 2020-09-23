@@ -7,13 +7,20 @@ resources:
   requests:
     cpu: 2
     memory: 8000000000
+    gpu: 1
   limits:
     cpu: 2
     memory: 8000000000
+    gpu: 1
+
+# nodeSelector
+nodeSelector:
+  gpu: "True"
 
 # Shorthands for setting both limits and requests of cpu/memory
 cpu: null
 memory: null
+gpu: 1
 
 env:
   - name: KMP_BLOCKTIME
