@@ -1,4 +1,4 @@
-FROM nauta/gpu-nvidia
+FROM nauta/jupyter-gpu
 
 # workdir set to /mnt - is treated by a jupyter as a main folder with notebooks
 WORKDIR /mnt

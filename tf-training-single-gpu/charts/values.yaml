@@ -6,11 +6,11 @@
 resources:
   requests:
     cpu: 2
-    memory: 8000000000
+    memory: 16000000000
     gpu: 1
   limits:
     cpu: 2
-    memory: 8000000000
+    memory: 16000000000
     gpu: 1
 
 # nodeSelector
