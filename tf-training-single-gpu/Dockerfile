@@ -1,4 +1,4 @@
-FROM nauta/jupyter-gpu
+FROM nauta/gpu-nvidia
 
 WORKDIR /app
 
